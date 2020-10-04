@@ -2,7 +2,7 @@ import * as actionTypes from "../actions/actionTypes";
 
 const intialState = {
   playerDamage: 5,
-  monsterDamage: 5,
+  monsterDamage: 7,
 };
 
 const damageReducer = (state = intialState, action) => {
