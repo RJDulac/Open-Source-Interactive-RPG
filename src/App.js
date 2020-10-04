@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 
 import * as healthActions from "./store/actions/health";
+import * as damageActions from "./store/actions/damage";
+
 import "./App.css";
 
 const App = ({
@@ -9,6 +11,8 @@ const App = ({
   onModifyPlayerHealth,
   monsterHealth,
   onModifyMonsterHealth,
+  playerDamage,
+  monsterDamage,
 }) => {
   return (
     <div className='App'>
@@ -21,14 +25,18 @@ const App = ({
         </button>
         <p>Player Health: {playerHealth}</p>
         <p>Monster Health: {monsterHealth}</p>
+        <p>Player damage: {playerDamage}</p>
+        <p>Monster damage: {monsterDamage}</p>
       </header>
     </div>
   );
 };
 const mapStateToProps = (state) => {
   return {
-    playerHealth: state.playerHealth,
-    monsterHealth: state.monsterHealth,
+    playerHealth: state.health.playerHealth,
+    monsterHealth: state.health.monsterHealth,
+    playerDamage: state.damage.playerDamage,
+    monsterDamage: state.damage.monsterDamage,
   };
 };
 
