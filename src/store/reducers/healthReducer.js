@@ -5,7 +5,7 @@ const intialState = {
   monsterHealth: 100,
 };
 
-const reducer = (state = intialState, action) => {
+const healthReducer = (state = intialState, action) => {
   switch (action.type) {
     case actionTypes.MODIFY_PLAYER_HEALTH:
       return {
@@ -22,4 +22,4 @@ const reducer = (state = intialState, action) => {
   }
 };
 
-export default reducer;
+export default healthReducer;

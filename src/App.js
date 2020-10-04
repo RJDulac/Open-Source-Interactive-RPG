@@ -2,8 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 
 import * as healthActions from "./store/actions/health";
-import PlayerHealth from "./components/PlayerHealth";
-import MonsterHealth from "./components/MonsterHealth";
+import * as damageActions from "./store/actions/damage";
+import Player from "./components/Player";
+import Monster from "./components/Monster";
 
 import "./App.css";
 
@@ -23,8 +24,8 @@ const App = ({
           </button>
         </div>
         <div id="health-display-wrapper">
-          <PlayerHealth />
-          <MonsterHealth />
+          <Player />
+          <Monster />
         </div>
       </header>
     </div>
