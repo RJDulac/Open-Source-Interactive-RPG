@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+#health-display-wrapper, #health-button-wrapper {
+  display: flex;
+  padding: 10px 20px;
+}
+
+.health-button {
+  width: 300px;
+  padding: 10px 30px;
+  margin: 0 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#player-health {
+  border: 2px solid rgba(173, 216, 230, 1);
+  background-color: rgba(173, 216, 230, 0.3);
+}
+
+#monster-health {
+  border: 2px solid rgba(250, 128, 114, 1);
+  background-color: rgba(250, 128, 114, 0.3);
+}
+
+.health-box {
+  width: 300px;
+  margin: 0 10px;
+  border-radius: 10px;
+}

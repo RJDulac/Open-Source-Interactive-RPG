@@ -3,42 +3,36 @@ import { connect } from "react-redux";
 
 import * as healthActions from "./store/actions/health";
 import * as damageActions from "./store/actions/damage";
+import Player from "./components/Player";
+import Monster from "./components/Monster";
 
 import "./App.css";
 
 const App = ({
-  playerHealth,
   onModifyPlayerHealth,
-  monsterHealth,
   onModifyMonsterHealth,
-  playerDamage,
-  monsterDamage,
 }) => {
   return (
     <div className='App'>
       <header className='App-header'>
-        <button onClick={() => onModifyPlayerHealth(5)}>
-          Increase Player Health
-        </button>
-        <button onClick={() => onModifyMonsterHealth(5)}>
-          Increase Monster Health
-        </button>
-        <p>Player Health: {playerHealth}</p>
-        <p>Monster Health: {monsterHealth}</p>
-        <p>Player damage: {playerDamage}</p>
-        <p>Monster damage: {monsterDamage}</p>
+        <div id="health-button-wrapper">
+          <button onClick={() => onModifyPlayerHealth(5)} className="health-button">
+            Increase Player Health
+          </button>
+          <button onClick={() => onModifyMonsterHealth(5)} className="health-button">
+            Increase Monster Health
+          </button>
+        </div>
+        <div id="health-display-wrapper">
+          <Player />
+          <Monster />
+        </div>
       </header>
     </div>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    playerHealth: state.health.playerHealth,
-    monsterHealth: state.health.monsterHealth,
-    playerDamage: state.damage.playerDamage,
-    monsterDamage: state.damage.monsterDamage,
-  };
-};
+
+const mapStateToProps = (state) => {};
 
 const mapDispatchToProps = (dispatch) => {
   return {
