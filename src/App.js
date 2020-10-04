@@ -6,6 +6,8 @@ import * as damageActions from "./store/actions/damage";
 import Player from "./components/Player";
 import Monster from "./components/Monster";
 
+import DamageBox from "./components/DamageBox";
+
 import "./App.css";
 
 const App = ({
@@ -35,10 +37,8 @@ const App = ({
           <Player />
           <Monster />
         </div>
-        <div>
-          <p>Player Damage: {playerDamage}</p>
-          <p>Monster Damge: {monsterDamage}</p>
-        </div>
+        <DamageBox damage={playerDamage} type='Player' />
+        <DamageBox damage={monsterDamage} type='Goblin' />
       </header>
     </div>
   );
