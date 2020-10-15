@@ -14,6 +14,7 @@ const App = ({
   onModifyPlayerHealth,
   onModifyMonsterHealth,
   onDealMonsterDamage,
+  onDealPlayerDamage,
   playerDamage,
   monsterDamage,
 }) => {
@@ -46,6 +47,12 @@ const App = ({
         >
           Deal Monster Damage
         </button>
+        <button
+          onClick={() => onDealPlayerDamage(playerDamage)}
+          className='health-button'
+        >
+          Deal Player Damage
+        </button>
       </header>
     </div>
   );
@@ -62,6 +69,9 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(healthActions.modifyPlayerHealth(amount)),
     onModifyMonsterHealth: (amount) =>
       dispatch(healthActions.modifyMonsterHealth(amount)),
+    onDealPlayerDamage: (amount) => {
+      dispatch(healthActions.playerDamageDealt(amount));
+    },
     onDealMonsterDamage: (amount) => {
       dispatch(healthActions.monsterDamageDealt(amount));
     },
