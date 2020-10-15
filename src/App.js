@@ -40,8 +40,11 @@ const App = ({
         </div>
         <DamageBox damage={playerDamage} type='Player' />
         <DamageBox damage={monsterDamage} type='Goblin' />
-        <button onClick={() => onDealMonsterDamage()} className='health-button'>
-          Deal Monster Damaeg
+        <button
+          onClick={() => onDealMonsterDamage(monsterDamage)}
+          className='health-button'
+        >
+          Deal Monster Damage
         </button>
       </header>
     </div>
@@ -59,8 +62,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(healthActions.modifyPlayerHealth(amount)),
     onModifyMonsterHealth: (amount) =>
       dispatch(healthActions.modifyMonsterHealth(amount)),
-    onDealMonsterDamage: () => {
-      dispatch(healthActions.monsterDamageDealt());
+    onDealMonsterDamage: (amount) => {
+      dispatch(healthActions.monsterDamageDealt(amount));
     },
   };
 };
