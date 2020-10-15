@@ -1,2 +1,6 @@
-export { modifyPlayerHealth, modifyMonsterHealth } from "./health";
+export {
+  modifyPlayerHealth,
+  modifyMonsterHealth,
+  monsterDamageDealt,
+} from "./health";
 export { modifyPlayerDamage, modifyMonsterDamage } from "./damage";

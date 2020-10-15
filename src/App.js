@@ -13,6 +13,7 @@ import "./App.css";
 const App = ({
   onModifyPlayerHealth,
   onModifyMonsterHealth,
+  onDealMonsterDamage,
   playerDamage,
   monsterDamage,
 }) => {
@@ -39,6 +40,9 @@ const App = ({
         </div>
         <DamageBox damage={playerDamage} type='Player' />
         <DamageBox damage={monsterDamage} type='Goblin' />
+        <button onClick={() => onDealMonsterDamage()} className='health-button'>
+          Deal Monster Damaeg
+        </button>
       </header>
     </div>
   );
@@ -55,6 +59,9 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(healthActions.modifyPlayerHealth(amount)),
     onModifyMonsterHealth: (amount) =>
       dispatch(healthActions.modifyMonsterHealth(amount)),
+    onDealMonsterDamage: () => {
+      dispatch(healthActions.monsterDamageDealt());
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
