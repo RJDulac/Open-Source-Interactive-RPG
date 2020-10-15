@@ -22,6 +22,11 @@ const healthReducer = (state = intialState, action) => {
         ...state,
         playerHealth: state.playerHealth - action.payload,
       };
+    case actionTypes.PLAYER_DAMAGE_DEALT:
+      return {
+        ...state,
+        monsterHealth: state.monsterHealth - action.payload,
+      };
     default:
       return state;
   }

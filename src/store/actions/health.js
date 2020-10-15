@@ -18,3 +18,9 @@ export const monsterDamageDealt = (amount) => {
     payload: amount,
   };
 };
+export const playerDamageDealt = (amount) => {
+  return {
+    type: actionTypes.PLAYER_DAMAGE_DEALT,
+    payload: amount,
+  };
+};
