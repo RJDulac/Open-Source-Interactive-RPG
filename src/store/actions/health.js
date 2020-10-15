@@ -12,9 +12,9 @@ export const modifyMonsterHealth = (amount) => {
     payload: amount,
   };
 };
-
-export const monsterDamageDealt = () => {
+export const monsterDamageDealt = (amount) => {
   return {
     type: actionTypes.MONSTER_DAMAGE_DEALT,
+    payload: amount,
   };
 };
