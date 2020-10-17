@@ -24,3 +24,10 @@ export const playerDamageDealt = (amount) => {
     payload: amount,
   };
 };
+
+export const newGame = () => {
+  return {
+    type: actionTypes.NEW_GAME,
+  }
+}
+

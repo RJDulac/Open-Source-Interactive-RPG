@@ -7,6 +7,7 @@ import Player from "./components/Player";
 import Monster from "./components/Monster";
 
 import DamageBox from "./components/DamageBox";
+import ResultModal from "./components/Modal/ResultModal";
 
 import "./App.css";
 
@@ -17,10 +18,13 @@ const App = ({
   onDealPlayerDamage,
   playerDamage,
   monsterDamage,
+  gameOver,
 }) => {
+
   return (
     <div className='App'>
       <header className='App-header'>
+        <ResultModal />
         <div id='health-button-wrapper'>
           <button
             onClick={() => onModifyPlayerHealth(5)}
@@ -61,6 +65,7 @@ const App = ({
 const mapStateToProps = (state) => ({
   playerDamage: state.damage.playerDamage,
   monsterDamage: state.damage.monsterDamage,
+  gameOver: state.health.gameOver,
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -70,10 +75,10 @@ const mapDispatchToProps = (dispatch) => {
     onModifyMonsterHealth: (amount) =>
       dispatch(healthActions.modifyMonsterHealth(amount)),
     onDealPlayerDamage: (amount) => {
-      dispatch(healthActions.playerDamageDealt(amount));
+      dispatch(healthActions.playerDamageDealt(amount),);
     },
     onDealMonsterDamage: (amount) => {
-      dispatch(healthActions.monsterDamageDealt(amount));
+      dispatch(healthActions.monsterDamageDealt(amount),);
     },
   };
 };
